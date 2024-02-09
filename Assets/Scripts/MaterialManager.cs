@@ -1,29 +1,50 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MaterialManager : MonoBehaviour
 {
+    [SerializeField] private Material offMat;
+    [SerializeField] private Material OnMat;
+    Renderer meshRenderer;
 
-    public static MaterialManager instance;
-    [SerializeField] private Material[] activeColor = new Material[3];
-    // Start is called before the first frame update
+    public delegate void Switch();
+    public static Switch TurnOn;
+    public static Switch TurnOff;
 
-
-    private void Awake()
+    void Awake()
     {
-        instance = this;
+        meshRenderer = GetComponent<Renderer>();
     }
 
-    void Start()
-    {
-        gameObject.GetComponent<Renderer>().material = activeColor[activeColor.Length];
-    }
+void OnEnable()
+{
+    TurnOn += TurnOnLight;
+    TurnOff += TurnOffLight;
+    
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+void OnDisable()
+{
+    TurnOff -= TurnOffLight;
+    TurnOn -= TurnOnLight;
+}
+
+
+void TurnOnLight()
+{
+    var matCopy = meshRenderer.materials;
+    matCopy[2] = OnMat;
+    meshRenderer.materials = matCopy;
+}
+
+void TurnOffLight()
+{
+    var matCopy = meshRenderer.materials;
+    matCopy[1] = offMat;
+    meshRenderer.materials = matCopy;
+}
+
 }

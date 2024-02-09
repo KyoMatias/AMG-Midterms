@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,25 +10,43 @@ public class KnobParameters : MonoBehaviour
     
     [SerializeField] private TextMeshPro counter;
     
-    private float m_currentAngle;
+    public float CurrentAngle;
+
+    public static KnobParameters Instance;
 
     public Transform Knob;
     
     // Start is called before the first frame update
     void Awake()
     {
-        counter.text = m_currentAngle.ToString();
+        Instance = this;
+    }
+
+    void Start()
+    {
+        counter.text = CurrentAngle.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
+        KnobLive();
+        Debug.Log($"LogValues: {CurrentAngle}");
+    }
+
+    public void KnobLive()
+    {
         float Rotation;
         Rotation = Knob.eulerAngles.y;
 
 
-        m_currentAngle = Rotation;
-        counter.text = m_currentAngle.ToString("#");
-        Debug.Log($"LogValues: {m_currentAngle}, {Rotation}");
+       CurrentAngle = Rotation;
+        counter.text = CurrentAngle.ToString("#");
+    }
+
+    public int GetCurrentAngle()
+    {
+        int value = Convert.ToInt32(CurrentAngle);
+        return value;
     }
 }
