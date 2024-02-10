@@ -13,14 +13,5 @@ public class DEBUGLIGHTS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.O))
-        {
-            MaterialManager.TurnOn?.Invoke();
-        }
-
-        else if(Input.GetKeyDown(KeyCode.P))
-        {
-            MaterialManager.TurnOff?.Invoke();
-        }
     }
 }
