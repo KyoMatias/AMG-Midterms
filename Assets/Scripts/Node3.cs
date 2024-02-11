@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Node1Light : MonoBehaviour
+public class Node3 : MonoBehaviour
 {
     [SerializeField] private Material m_onMaterial;
     [SerializeField] private Material m_offMaterial;
 
-    public GameObject light1;
+    public GameObject light3;
 
     public static bool m_isActivated;
 
@@ -25,9 +24,9 @@ public class Node1Light : MonoBehaviour
     {
         if(m_isActivated)
         {
-            Material[] mats = light1.GetComponent<Renderer>().materials;
+            Material[] mats = light3.GetComponent<Renderer>().materials;
             mats[1] = m_onMaterial;
-            light1.GetComponent<Renderer>().materials = mats;
+            light3.GetComponent<Renderer>().materials = mats;
 
         }
         else 

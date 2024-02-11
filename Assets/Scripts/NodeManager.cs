@@ -71,7 +71,7 @@ public class NodeManager : MonoBehaviour
 
             if(LockValue == Val1)
             {
-                MaterialManager.TurnOn1?.Invoke();
+                Node1Light.ActivateStatus(true);
                 n1solved = ThrowNodeStatus(true);
             }
 
@@ -83,7 +83,7 @@ public class NodeManager : MonoBehaviour
 
         if(LockValue == Val2)
         {
-            MaterialManager.TurnOn2?.Invoke();
+            Node2.ActivateStatus(true);
             n2solved = ThrowNodeStatus(true);
         }
     }
@@ -95,7 +95,7 @@ public class NodeManager : MonoBehaviour
 
         if(LockValue == Val3)
         {
-            MaterialManager.TurnOn3?.Invoke();
+            Node3.ActivateStatus(true);
             n3solved = ThrowNodeStatus(true);
         }
     }
