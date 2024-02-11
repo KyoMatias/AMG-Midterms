@@ -207,7 +207,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: -19
+    value: -37
   tint:
     overrideState: 1
     value: 0
@@ -216,10 +216,10 @@ MonoBehaviour:
     value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     overrideState: 1
-    value: 0
+    value: 2
   saturation:
     overrideState: 1
-    value: 0
+    value: -20
   brightness:
     overrideState: 1
     value: 0
@@ -228,10 +228,10 @@ MonoBehaviour:
     value: 0
   contrast:
     overrideState: 1
-    value: 0
+    value: 14
   mixerRedOutRedIn:
     overrideState: 1
-    value: 34
+    value: 36
   mixerRedOutGreenIn:
     overrideState: 1
     value: 0
@@ -1483,13 +1483,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1.53
+    value: 39.5
   threshold:
     overrideState: 1
     value: 1
   softKnee:
     overrideState: 1
-    value: 0.5
+    value: 0
   clamp:
     overrideState: 1
     value: 65472
@@ -1511,4 +1511,4 @@ MonoBehaviour:
     defaultState: 1
   dirtIntensity:
     overrideState: 1
-    value: 0
+    value: 7.74
